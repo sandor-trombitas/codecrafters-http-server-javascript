@@ -76,7 +76,6 @@ const handleData = socket => data => {
 const server = net.createServer(socket => {
   socket.on('close', () => {
     socket.end();
-    server.close();
   });
   socket.on('data', handleData(socket));
 });
